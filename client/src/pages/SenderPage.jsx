@@ -245,6 +245,10 @@ export default function SenderPage() {
       setProgress(((i + 1) / chunks.length) * 100)
     }
 
+    while (channel.bufferedAmount > 0) {
+      await new Promise(r => setTimeout(r, 50))
+    }
+
     channel.send(JSON.stringify({
       type: 'done',
       totalChunks: chunks.length,
