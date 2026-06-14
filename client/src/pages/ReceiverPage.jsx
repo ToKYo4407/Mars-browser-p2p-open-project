@@ -59,7 +59,9 @@ export default function ReceiverPage() {
   }, [cleanup])
 
   function connectSignaling(roomId) {
-    const socket = io('http://localhost:3001')
+    const socket = io(
+    'https://mars-browser-p2p-open-project-production.up.railway.app'
+  )
     socketRef.current = socket
 
     socket.on('connect', () => {
