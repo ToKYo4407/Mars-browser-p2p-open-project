@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #FFFDF7;
+  --black: #0A0A0A;
+  --yellow: #FFE500;
+  --red: #FF3B3B;
+  --green: #00C853;
+  --shadow: 6px 6px 0px 0px var(--black);
+  --shadow-sm: 4px 4px 0px 0px var(--black);
+  --shadow-btn: 4px 4px 0px 0px var(--black);
+}
+
+* {
+  box-sizing: border-box;
+  border-radius: 0 !important;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--black);
+  min-height: 100vh;
+}
+
+.mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.card {
+  background: #fff;
+  border: 3px solid var(--black);
+  box-shadow: var(--shadow);
+}
+
+.btn {
+  background: var(--black);
+  color: #fff;
+  border: 2px solid var(--black);
+  box-shadow: var(--shadow-btn);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.08s, box-shadow 0.08s;
+  padding: 10px 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px 0px var(--black);
+}
+
+.btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+.btn-yellow {
+  background: var(--yellow);
+  color: var(--black);
+  border-color: var(--black);
+}
+
+.btn-red {
+  background: var(--red);
+  color: #fff;
+}
+
+.progress-track {
+  background: #e5e5e5;
+  border: 2px solid var(--black);
+  height: 24px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: var(--yellow);
+  height: 100%;
+  border-right: 2px solid var(--black);
+  transition: width 0.2s ease;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--black);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.status-dot.connected { background: var(--green); }
+.status-dot.connecting { background: var(--yellow); }
+.status-dot.disconnected { background: var(--red); }
+
+.drop-zone {
+  border: 3px dashed var(--black);
+  background: #fff;
+  transition: background 0.1s;
+  cursor: pointer;
+}
+
+.drop-zone.drag-over {
+  background: var(--yellow);
+}
+
+.tag {
+  background: var(--yellow);
+  border: 2px solid var(--black);
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'IBM Plex Mono', monospace;
+  display: inline-block;
+}
+
+.tag.red { background: var(--red); color: #fff; }
+.tag.green { background: var(--green); }
+
+.notice-error {
+  background: var(--red);
+  border: 3px solid var(--black);
+  color: #fff;
+  box-shadow: var(--shadow);
+  padding: 16px;
+  font-weight: 600;
+}
+
+.notice-success {
+  background: var(--green);
+  border: 3px solid var(--black);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  font-weight: 600;
+}
